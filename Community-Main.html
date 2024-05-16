@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,19 +8,41 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="healthcare.png">
         <title>Alumi Community</title>
+        <script>
+            function validateForm(event) {
+                event.preventDefault();
+                var commentBox = document.getElementById('comment-box');
+                var message = document.getElementById('message');
+                var commentsSection = document.getElementById('comment-section');
+
+                if (commentBox.value.trim() === "") {
+                    alert("The comment box cannot be empty!");
+                    return false;
+                } else {
+                    message.style.display = 'block';
+                    var newComment = document.createElement('div');
+                    newComment.className = 'comment';
+                    newComment.textContent = commentBox.value;
+                    commentsSection.appendChild(newComment);
+                    commentBox.value = ""; 
+                    return true;
+                }
+            }
+        </script>
+
     </head>
-    
-    <header>
-        <h2 class="alumi">Alumi</h2>
-        <nav class="navi">
-            <a href="Alumi.html" class="active">Home</a>
-            <a href="Tasks.html">Tasks</a>
-            <a href="Resources-Main.html">Resources</a>
-            <a href="Community-Main.html">Community</a>
-        </nav>
-    </header>
 
     <body>
+        <header>
+            <h2 class="alumi">Alumi</h2>
+            <nav class="navi">
+                <a href="Alumi.html" class="active">Home</a>
+                <a href="Tasks.html">Tasks</a>
+                <a href="Resources-Main.html">Resources</a>
+                <a href="Community-Main.html">Community</a>
+            </nav>
+        </header>
+
         <section class="sc1home">
             <h2 id="h2home">"Alumi interacts with you!"</h2>
         </section>
@@ -28,13 +50,15 @@
         <div class="community">
             <div class="box1">
                 <h2>
-                    Here you can share you comments, suggestions, as well as your ideas!
+                    Here you can share your comments, suggestions, as well as your ideas!
                 </h2>
 
                 <div class="form">
-                    <input type="text" id="comment-box" placeholder="Leave a comment!">
-                    <div id="message" style="display: none;">Thank you for your suggestion!</div>
-                    <input type="submit" value="Submit" onclick="document.getElementById('message').style.display='block'">
+                    <form onsubmit="validateForm(event)">
+                        <input type="text" id="comment-box" placeholder="Leave a comment!">
+                        <div id="message" style="display: none;"></div>
+                        <input type="submit" value="Submit">
+                    </form>
                 </div>
             </div>
 
@@ -49,15 +73,18 @@
                 <li><a href="https://www.google.com" class="fa fa-google"></a></li>
                 <li><a href="https://www.reddit.com" class="fa fa-reddit"></a></li>
             </div>
-            
         </div>
-  
+
         <section class="sc2home">
             <h5>Your ideas will benefit everyone!</h5>
         </section>
 
-        <input type="button" class="back" value="Back" onclick="window.history.back()" /> 
-        
+        <section class="commsect" id="comment-section">
+            <h3>Comments:</h3>
+        </section>
+
+        <input type="button" class="back" value="Back" onclick="window.history.back()">
+
         <footer>
             <div class="footcont">
                 <ul class="footsoci">

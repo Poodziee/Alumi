@@ -8,6 +8,26 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="healthcare.png">
         <title>Alumi Tasks</title>
+
+        <script>
+
+    function updateProgress(gridId) {
+        var grid = document.getElementById(gridId);
+        var checkboxes = grid.querySelectorAll('input[type="checkbox"]');
+        var completedTasks = 0;
+        checkboxes.forEach(function(checkbox) {
+            if (checkbox.checked) {
+                completedTasks++;
+            }
+        });
+        var totalTasks = checkboxes.length;
+        var progress = (completedTasks / totalTasks) * 100;
+        alert("Progress for " + grid.querySelector('h2').innerText + ": " + progress.toFixed(2) + "%");
+    }
+
+
+        </script>
+
     </head>
     
     <header>
@@ -26,68 +46,68 @@
         </section>
 
         <div class="task">
-            <div class="grid">
+            <div class="grid" id="diet-grid">
                 <h2>Diet</h2>
                 <ul>
-                    <li> Cup of water 8x or more a day. </li>
-                    <li> Eat a variety of meals.</li>
-                    <li> Limit food with sugar and saturated fats .</li>
-                    <li> Avoid overeating. </li>
+                    <li><input type="checkbox" onchange="updateProgress('diet-grid')"> Cup of water 8x or more a day. </li>
+                    <li><input type="checkbox" onchange="updateProgress('diet-grid')"> Eat a variety of meals.</li>
+                    <li><input type="checkbox" onchange="updateProgress('diet-grid')"> Limit food with sugar and saturated fats .</li>
+                    <li><input type="checkbox" onchange="updateProgress('diet-grid')"> Avoid overeating. </li>
                     <li><a href="Tasks-Diet.html">Read More</a></li>
                 </ul>
             </div>
 
-            <div class="grid">
+            <div class="grid" id="sleep-grid">
                 <h2>Sleep</h2>
                 <ul>
-                    <li> Sleep 8 hours a day. </li>
-                    <li> Maintain a consistent sleep schedule.</li>
-                    <li> Always limit screen exposure before bedtime.</li>
-                    <li> Always limit naps. </li>
+                    <li><input type="checkbox" onchange="updateProgress('sleep-grid')"> Sleep 8 hours a day. </li>
+                    <li><input type="checkbox" onchange="updateProgress('sleep-grid')"> Maintain a consistent sleep schedule.</li>
+                    <li><input type="checkbox" onchange="updateProgress('sleep-grid')"> Always limit screen exposure before bedtime.</li>
+                    <li><input type="checkbox" onchange="updateProgress('sleep-grid')"> Always limit naps. </li>
                     <li><a href="Tasks-Sleep.html">Read More</a></li>
                 </ul>
             </div>
 
-            <div class="grid">
+            <div class="grid" id="exercise-grid">
                 <h2>Exercise</h2>
                 <ul>
-                    <li> Have an exercise routine 1-2 hours a day.</li>
-                    <li> Add warm-up and cooldown exercises.</li>
-                    <li> Prioritize rest and recovery.</li>
-                    <li> Maintain a proper form each exercise. </li>
+                    <li><input type="checkbox" onchange="updateProgress('sleep-grid')"> Have an exercise routine 1-2 hours a day.</li>
+                    <li><input type="checkbox" onchange="updateProgress('sleep-grid')"> Add warm-up and cooldown exercises.</li>
+                    <li><input type="checkbox" onchange="updateProgress('sleep-grid')"> Prioritize rest and recovery.</li>
+                    <li><input type="checkbox" onchange="updateProgress('sleep-grid')"> Maintain a proper form each exercise. </li>
                     <li><a href="Tasks-Exercise.html">Read More</a></li>
                 </ul>
             </div>
 
-            <div class="grid">
+            <div class="grid" id="mental-grid">
                 <h2>Mental Health</h2>
                 <ul>
-                    <li> Always give yourself time to relax. </li>
-                    <li> Encourage positive relationship with others. </li>
-                    <li> Maintain healthy lifestyle habits.</li>
-                    <li> Limit exposure of negative traits such as stress or anxiety. </li>
+                    <li><input type="checkbox" onchange="updateProgress('mental-grid')"> Always give yourself time to relax. </li>
+                    <li><input type="checkbox" onchange="updateProgress('mental-grid')"> Encourage positive relationship with others. </li>
+                    <li><input type="checkbox" onchange="updateProgress('mental-grid')"> Maintain healthy lifestyle habits.</li>
+                    <li><input type="checkbox" onchange="updateProgress('mental-grid')"> Limit exposure of negative traits such as stress or anxiety. </li>
                     <li><a href="Tasks-MentalHealth.html">Read More</a></li>
                 </ul>
             </div>
 
-            <div class="grid">
+            <div class="grid" id="environment-grid">
                 <h2>Environment</h2>
                 <ul>
-                    <li> Clean your surroundings. </li>
-                    <li> Spend time with nature. </li>
-                    <li> Encourage yourself to obtain a plant.</li>
-                    <li> Limit exposure of smoke or contaminated water. </li>
+                    <li><input type="checkbox" onchange="updateProgress('environment-grid')"> Clean your surroundings. </li>
+                    <li><input type="checkbox" onchange="updateProgress('environment-grid')"> Spend time with nature. </li>
+                    <li><input type="checkbox" onchange="updateProgress('environment-grid')"> Encourage yourself to obtain a plant.</li>
+                    <li><input type="checkbox" onchange="updateProgress('environment-grid')"> Limit exposure of smoke or contaminated water. </li>
                     <li><a href="Tasks-Environment.html">Read More</a></li>
                 </ul>
             </div>
 
-            <div class="grid">
+            <div class="grid" id="social-grid">
                 <h2>Social Health</h2>
                 <ul>
-                    <li> Interact with other people. </li>
-                    <li> Spend time with your family/friends. </li>
-                    <li> Volunteer in community services.</li>
-                    <li> Don't be afraid to share your thoughts and emotions. </li>
+                    <li><input type="checkbox" onchange="updateProgress('social-grid')"> Interact with other people. </li>
+                    <li><input type="checkbox" onchange="updateProgress('social-grid')"> Spend time with your family/friends. </li>
+                    <li><input type="checkbox" onchange="updateProgress('social-grid')"> Volunteer in community services.</li>
+                    <li><input type="checkbox" onchange="updateProgress('social-grid')"> Don't be afraid to share your thoughts and emotions. </li>
                     <li><a href="Tasks-Social.html">Read More</a></li>
                 </ul>
             </div>
